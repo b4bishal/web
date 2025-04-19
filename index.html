@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bishal Kafle | Ethical Hacker</title>
+  <title>Bishal Kafle</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-    a{
-      text-decoration: none;
-      color: red;
     }
 
     body {
@@ -42,7 +38,6 @@
       border-radius: 50%;
       border: 3px solid #00ff9c;
       object-fit: cover;
-      mix-blend-mode: color-dodge ;
     }
 
     h1 {
@@ -69,6 +64,31 @@
       margin-bottom: 10px;
     }
 
+    .featured {
+      background-color: white;
+      margin-top: 40px;
+      position: relative;
+      height: 610px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .featured h3 {
+      color: #000;
+    }
+
+    .iframe-wrapper {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .iframe-wrapper iframe {
+      min-width: 100%;
+      border-radius: 10px;
+    }
+
     footer {
       margin-top: 40px;
       color: #555;
@@ -83,6 +103,9 @@
         width: 150px;
         height: 150px;
       }
+      .iframe-wrapper iframe {
+        width: 100% !important;
+      }
     }
   </style>
 </head>
@@ -91,12 +114,12 @@
     <header>
       <img src="pic.jpg" alt="Bishal Kafle">
       <h1>Bishal Kafle</h1>
-      <h2>IT Student | Ethical Hacker | Recognized by META, Microsoft, OpenAI</h2>
+      <h2>IT Student | Ethical Hacker | Recognized by META, OpenAI</h2>
     </header>
 
     <div class="card">
       <h3>About Me</h3>
-      <p>I’m an IT student and an ethical hacker passionate about cybersecurity. I’ve been recognized by major platforms like META, Microsoft, and OpenAI for discovering vulnerabilities and helping secure their systems.</p>
+      <p>I’m an IT student and an ethical hacker passionate about cybersecurity. I’ve been recognized by major platforms like META,OpenAI other international companies for discovering vulnerabilities and helping secure their systems.</p>
       <p>I enjoy exploring system flaws, building secure apps, and staying ahead in the world of hacking and digital defense.</p>
     </div>
 
@@ -104,6 +127,7 @@
       <h3>Skills</h3>
       <ul>
         <li>Vulnerability Assessment</li>
+        <li>Bug Bounty Hunting</li>
         <li>Web Application Security</li>
         <li>Python & Scripting</li>
         <li>Penetration Testing</li>
@@ -113,15 +137,31 @@
 
     <div class="card">
       <h3>Contact</h3>
-      <p>Email: <a href="mailto:mail@bishalkafle.info.np">mail@bishalkafle.info.np</a></p>
-      <p>Facebook: <a href="https://facebook.com/whoisbishal.k">@whoisbishal.k</a></p>
-      <p>Instagram: <a href="https://instagram.com/whoisbishal.k">@whoisbishal.k</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/bishal-kafle-8569ab31a">https://www.linkedin.com/in/bishal-kafle-8569ab31a</a></p>
+      <p>Email: bishal@example.com</p>
+      <p>GitHub: github.com/bishalkafle</p>
+      <p>LinkedIn: linkedin.com/in/bishalkafle</p>
+    </div>
+
+    <div class="card featured">
+      <h3>Featured In</h3>
+      <div class="iframe-wrapper" id="iframeWrapper">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fofficialroutineofnepalbanda%2Fposts%2Fpfbid035S5cdvRuDgkf25EoxADinFEeeZuz7pF7i51ooYATcyN3DQsZcEJcHwQoC44EfFQtl&show_text=true&width=500" width="500" height="607" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fofficialroutineofnepalbanda%2Fposts%2Fpfbid0dVVbCzM2W848KXY35xv1QBB1A8RgYRNpSHzGo1BnccQdkuhYos6dGVU76PoM24JGl&show_text=true&width=500" width="500" height="608" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
     </div>
 
     <footer>
       <p>&copy; 2025 Bishal Kafle. All Rights Reserved.</p>
     </footer>
   </div>
+
+  <script>
+    const wrapper = document.getElementById('iframeWrapper');
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % 2;
+      wrapper.style.transform = `translateX(-${index * 100}%)`;
+    }, 5000);
+  </script>
 </body>
 </html>
