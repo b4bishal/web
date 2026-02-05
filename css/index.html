@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garga Copy Udhyog | Quality Notebooks for Every Student</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --secondary: #f59e0b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --success: #10b981;
+      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ANIMATED BACKGROUND */
+    .bg-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      background: var(--gradient);
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .shape-2 {
+      width: 200px;
+      height: 200px;
+      background: var(--gradient-2);
+      top: 60%;
+      right: 15%;
+      animation-delay: 5s;
+    }
+
+    .shape-3 {
+      width: 150px;
+      height: 150px;
+      background: var(--gradient);
+      bottom: 10%;
+      left: 50%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(50px, -50px) scale(1.1); }
+      66% { transform: translate(-30px, 30px) scale(0.9); }
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+      padding: 18px 0;
+      transition: all 0.3s;
+    }
+
+    .navbar-scrolled {
+      padding: 12px 0;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--dark) !important;
+      position: relative;
+      padding: 8px 16px !important;
+      transition: color 0.3s;
+    }
+
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: var(--gradient);
+      transition: all 0.3s;
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+
+    .nav-link:hover:after {
+      width: 80%;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 160px 0 120px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #64748b;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .badge-nepal {
+      background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn-gradient {
+      background: var(--gradient);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 12px 30px rgba(102, 102, 246, 0.4);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(102, 102, 246, 0.5);
+    }
+
+    .btn-outline-gradient {
+      background: transparent;
+      color: #6366f1;
+      padding: 14px 34px;
+      border-radius: 50px;
+      border: 2px solid #6366f1;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-outline-gradient:hover {
+      background: #6366f1;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      border-radius: 30px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+      width: 100%;
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: transform 0.5s;
+    }
+
+    .hero-image:hover img {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .floating-card {
+      position: absolute;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      animation: floatCard 3s infinite ease-in-out;
+    }
+
+    .card-1 {
+      top: 10%;
+      right: -10%;
+      animation-delay: 0s;
+    }
+
+    .card-2 {
+      bottom: 15%;
+      right: -15%;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: #64748b;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s;
+      border: 2px solid transparent;
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: #6366f1;
+      box-shadow: 0 20px 60px rgba(102, 102, 246, 0.2);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      background: var(--gradient);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .feature-card h5 {
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    .feature-card p {
+      color: #64748b;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* PRODUCTS WITH SLIDING ANIMATIONS */
+    .products {
+      padding: 80px 0;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+      height: 240px;
+    }
+
+    .product-image img.main-img,
+    .product-image img.slide-img1,
+    .product-image img.slide-img2 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .product-image:hover .main-img,
+    .product-image:hover .slide-img1,
+    .product-image:hover .slide-img2 {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--gradient);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 10;
+    }
+
+    .product-content {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-content h6 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #6366f1;
+      margin: 12px 0;
+    }
+
+    .product-specs {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+
+    .order-btn-new {
+      width: 100%;
+      background: var(--gradient);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s;
+      margin-top: auto;
+    }
+
+    .order-btn-new:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(102, 102, 246, 0.4);
+    }
+
+    /* ========== UNIQUE ANIMATIONS FOR EACH CATALOG ========== */
+    
+    /* Catalog 1 - Horizontal slide right */
+    .catalog-1 .main-img { animation: slideCatalog1Main 15s infinite; }
+    .catalog-1 .slide-img1 { animation: slideCatalog1Alt1 15s infinite; }
+    .catalog-1 .slide-img2 { animation: slideCatalog1Alt2 15s infinite; }
+
+    @keyframes slideCatalog1Main {
+      0%, 30% { opacity: 1; transform: translateX(0); }
+      33%, 97% { opacity: 0; transform: translateX(-100%); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideCatalog1Alt1 {
+      0%, 30% { opacity: 0; transform: translateX(100%); }
+      33%, 63% { opacity: 1; transform: translateX(0); }
+      66%, 100% { opacity: 0; transform: translateX(-100%); }
+    }
+    @keyframes slideCatalog1Alt2 {
+      0%, 63% { opacity: 0; transform: translateX(100%); }
+      66%, 97% { opacity: 1; transform: translateX(0); }
+      100% { opacity: 0; transform: translateX(100%); }
+    }
+
+    /* Catalog 2 - Vertical slide down */
+    .catalog-2 .main-img { animation: slideCatalog2Main 15s infinite; }
+    .catalog-2 .slide-img1 { animation: slideCatalog2Alt1 15s infinite; }
+    .catalog-2 .slide-img2 { animation: slideCatalog2Alt2 15s infinite; }
+
+    @keyframes slideCatalog2Main {
+      0%, 30% { opacity: 1; transform: translateY(0); }
+      33%, 97% { opacity: 0; transform: translateY(-100%); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideCatalog2Alt1 {
+      0%, 30% { opacity: 0; transform: translateY(100%); }
+      33%, 63% { opacity: 1; transform: translateY(0); }
+      66%, 100% { opacity: 0; transform: translateY(-100%); }
+    }
+    @keyframes slideCatalog2Alt2 {
+      0%, 63% { opacity: 0; transform: translateY(100%); }
+      66%, 97% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(100%); }
+    }
+
+    /* Catalog 3 - Fade scale */
+    .catalog-3 .main-img { animation: slideCatalog3Main 15s infinite; }
+    .catalog-3 .slide-img1 { animation: slideCatalog3Alt1 15s infinite; }
+    .catalog-3 .slide-img2 { animation: slideCatalog3Alt2 15s infinite; }
+
+    @keyframes slideCatalog3Main {
+      0%, 30% { opacity: 1; transform: scale(1); }
+      33%, 97% { opacity: 0; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideCatalog3Alt1 {
+      0%, 30% { opacity: 0; transform: scale(0.8); }
+      33%, 63% { opacity: 1; transform: scale(1); }
+      66%, 100% { opacity: 0; transform: scale(1.2); }
+    }
+    @keyframes slideCatalog3Alt2 {
+      0%, 63% { opacity: 0; transform: scale(0.8); }
+      66%, 97% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.8); }
+    }
+
+    /* Catalog 4 - Diagonal slide */
+    .catalog-4 .main-img { animation: slideCatalog4Main 15s infinite; }
+    .catalog-4 .slide-img1 { animation: slideCatalog4Alt1 15s infinite; }
+    .catalog-4 .slide-img2 { animation: slideCatalog4Alt2 15s infinite; }
+
+    @keyframes slideCatalog4Main {
+      0%, 30% { opacity: 1; transform: translate(0, 0); }
+      33%, 97% { opacity: 0; transform: translate(-100%, -100%); }
+      100% { opacity: 1; transform: translate(0, 0); }
+    }
+    @keyframes slideCatalog4Alt1 {
+      0%, 30% { opacity: 0; transform: translate(100%, 100%); }
+      33%, 63% { opacity: 1; transform: translate(0, 0); }
+      66%, 100% { opacity: 0; transform: translate(-100%, -100%); }
+    }
+    @keyframes slideCatalog4Alt2 {
+      0%, 63% { opacity: 0; transform: translate(100%, 100%); }
+      66%, 97% { opacity: 1; transform: translate(0, 0); }
+      100% { opacity: 0; transform: translate(100%, 100%); }
+    }
+
+    /* Catalog 5 - Rotate fade */
+    .catalog-5 .main-img { animation: slideCatalog5Main 15s infinite; }
+    .catalog-5 .slide-img1 { animation: slideCatalog5Alt1 15s infinite; }
+    .catalog-5 .slide-img2 { animation: slideCatalog5Alt2 15s infinite; }
+
+    @keyframes slideCatalog5Main {
+      0%, 30% { opacity: 1; transform: rotate(0deg) scale(1); }
+      33%, 97% { opacity: 0; transform: rotate(90deg) scale(0.5); }
+      100% { opacity: 1; transform: rotate(0deg) scale(1); }
+    }
+    @keyframes slideCatalog5Alt1 {
+      0%, 30% { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+      33%, 63% { opacity: 1; transform: rotate(0deg) scale(1); }
+      66%, 100% { opacity: 0; transform: rotate(90deg) scale(0.5); }
+    }
+    @keyframes slideCatalog5Alt2 {
+      0%, 63% { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+      66%, 97% { opacity: 1; transform: rotate(0deg) scale(1); }
+      100% { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+    }
+
+    /* Catalog 6 - Slide left */
+    .catalog-6 .main-img { animation: slideCatalog6Main 15s infinite; }
+    .catalog-6 .slide-img1 { animation: slideCatalog6Alt1 15s infinite; }
+    .catalog-6 .slide-img2 { animation: slideCatalog6Alt2 15s infinite; }
+
+    @keyframes slideCatalog6Main {
+      0%, 30% { opacity: 1; transform: translateX(0); }
+      33%, 97% { opacity: 0; transform: translateX(100%); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideCatalog6Alt1 {
+      0%, 30% { opacity: 0; transform: translateX(-100%); }
+      33%, 63% { opacity: 1; transform: translateX(0); }
+      66%, 100% { opacity: 0; transform: translateX(100%); }
+    }
+    @keyframes slideCatalog6Alt2 {
+      0%, 63% { opacity: 0; transform: translateX(-100%); }
+      66%, 97% { opacity: 1; transform: translateX(0); }
+      100% { opacity: 0; transform: translateX(-100%); }
+    }
+
+    /* Catalog 7 - Slide up */
+    .catalog-7 .main-img { animation: slideCatalog7Main 15s infinite; }
+    .catalog-7 .slide-img1 { animation: slideCatalog7Alt1 15s infinite; }
+    .catalog-7 .slide-img2 { animation: slideCatalog7Alt2 15s infinite; }
+
+    @keyframes slideCatalog7Main {
+      0%, 30% { opacity: 1; transform: translateY(0); }
+      33%, 97% { opacity: 0; transform: translateY(100%); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideCatalog7Alt1 {
+      0%, 30% { opacity: 0; transform: translateY(-100%); }
+      33%, 63% { opacity: 1; transform: translateY(0); }
+      66%, 100% { opacity: 0; transform: translateY(100%); }
+    }
+    @keyframes slideCatalog7Alt2 {
+      0%, 63% { opacity: 0; transform: translateY(-100%); }
+      66%, 97% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-100%); }
+    }
+
+    /* Catalog 8 - Flip horizontal */
+    .catalog-8 .main-img { animation: slideCatalog8Main 15s infinite; }
+    .catalog-8 .slide-img1 { animation: slideCatalog8Alt1 15s infinite; }
+    .catalog-8 .slide-img2 { animation: slideCatalog8Alt2 15s infinite; }
+
+    @keyframes slideCatalog8Main {
+      0%, 30% { opacity: 1; transform: rotateY(0deg); }
+      33%, 97% { opacity: 0; transform: rotateY(180deg); }
+      100% { opacity: 1; transform: rotateY(0deg); }
+    }
+    @keyframes slideCatalog8Alt1 {
+      0%, 30% { opacity: 0; transform: rotateY(-180deg); }
+      33%, 63% { opacity: 1; transform: rotateY(0deg); }
+      66%, 100% { opacity: 0; transform: rotateY(180deg); }
+    }
+    @keyframes slideCatalog8Alt2 {
+      0%, 63% { opacity: 0; transform: rotateY(-180deg); }
+      66%, 97% { opacity: 1; transform: rotateY(0deg); }
+      100% { opacity: 0; transform: rotateY(-180deg); }
+    }
+
+    /* Catalog 9 - Zoom rotate */
+    .catalog-9 .main-img { animation: slideCatalog9Main 15s infinite; }
+    .catalog-9 .slide-img1 { animation: slideCatalog9Alt1 15s infinite; }
+    .catalog-9 .slide-img2 { animation: slideCatalog9Alt2 15s infinite; }
+
+    @keyframes slideCatalog9Main {
+      0%, 30% { opacity: 1; transform: scale(1) rotate(0deg); }
+      33%, 97% { opacity: 0; transform: scale(0.3) rotate(-180deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    @keyframes slideCatalog9Alt1 {
+      0%, 30% { opacity: 0; transform: scale(0.3) rotate(180deg); }
+      33%, 63% { opacity: 1; transform: scale(1) rotate(0deg); }
+      66%, 100% { opacity: 0; transform: scale(0.3) rotate(-180deg); }
+    }
+    @keyframes slideCatalog9Alt2 {
+      0%, 63% { opacity: 0; transform: scale(0.3) rotate(180deg); }
+      66%, 97% { opacity: 1; transform: scale(1) rotate(0deg); }
+      100% { opacity: 0; transform: scale(0.3) rotate(180deg); }
+    }
+
+    /* Catalog 10 - Diagonal opposite */
+    .catalog-10 .main-img { animation: slideCatalog10Main 15s infinite; }
+    .catalog-10 .slide-img1 { animation: slideCatalog10Alt1 15s infinite; }
+    .catalog-10 .slide-img2 { animation: slideCatalog10Alt2 15s infinite; }
+
+    @keyframes slideCatalog10Main {
+      0%, 30% { opacity: 1; transform: translate(0, 0); }
+      33%, 97% { opacity: 0; transform: translate(100%, -100%); }
+      100% { opacity: 1; transform: translate(0, 0); }
+    }
+    @keyframes slideCatalog10Alt1 {
+      0%, 30% { opacity: 0; transform: translate(-100%, 100%); }
+      33%, 63% { opacity: 1; transform: translate(0, 0); }
+      66%, 100% { opacity: 0; transform: translate(100%, -100%); }
+    }
+    @keyframes slideCatalog10Alt2 {
+      0%, 63% { opacity: 0; transform: translate(-100%, 100%); }
+      66%, 97% { opacity: 1; transform: translate(0, 0); }
+      100% { opacity: 0; transform: translate(-100%, 100%); }
+    }
+
+    /* Catalog 11 - Blur fade */
+    .catalog-11 .main-img { animation: slideCatalog11Main 15s infinite; }
+    .catalog-11 .slide-img1 { animation: slideCatalog11Alt1 15s infinite; }
+    .catalog-11 .slide-img2 { animation: slideCatalog11Alt2 15s infinite; }
+
+    @keyframes slideCatalog11Main {
+      0%, 30% { opacity: 1; filter: blur(0px); transform: scale(1); }
+      33%, 97% { opacity: 0; filter: blur(10px); transform: scale(1.1); }
+      100% { opacity: 1; filter: blur(0px); transform: scale(1); }
+    }
+    @keyframes slideCatalog11Alt1 {
+      0%, 30% { opacity: 0; filter: blur(10px); transform: scale(0.9); }
+      33%, 63% { opacity: 1; filter: blur(0px); transform: scale(1); }
+      66%, 100% { opacity: 0; filter: blur(10px); transform: scale(1.1); }
+    }
+    @keyframes slideCatalog11Alt2 {
+      0%, 63% { opacity: 0; filter: blur(10px); transform: scale(0.9); }
+      66%, 97% { opacity: 1; filter: blur(0px); transform: scale(1); }
+      100% { opacity: 0; filter: blur(10px); transform: scale(0.9); }
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,0.2);
+      height: 100%;
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .author-info h6 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .author-info p {
+      margin: 0;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .cta-box {
+      background: white;
+      border-radius: 30px;
+      padding: 60px 40px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-box h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .cta-box p {
+      font-size: 1.1rem;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+
+    .whatsapp-btn {
+      background: #25d366;
+      color: white;
+      padding: 18px 40px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 60px 0 30px;
+    }
+
+    .footer-brand {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .footer-desc {
+      color: #94a3b8;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .footer-links h6 {
+      color: white;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    .social-icon:hover {
+      background: var(--gradient);
+      transform: translateY(-3px);
+    }
+
+    .logo-bg{
+      height: 50px;
+      width: 50px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 40px;
+      padding-top: 24px;
+      text-align: center;
+      color: #64748b;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+      z-index: 1000;
+      transition: all 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      color: white;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 12px 50px rgba(37, 211, 102, 0.8); }
+    }
+
+    /* RESPONSIVE - MOBILE OPTIMIZATION */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .hero-stats {
+        justify-content: center;
+      }
+      
+      .floating-card {
+        display: none;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .btn-gradient, .btn-outline-gradient {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .product-card {
+        font-size: 0.85rem;
+      }
+      
+      .product-content {
+        padding: 16px;
+      }
+      
+      .product-content h6 {
+        font-size: 0.95rem;
+      }
+      
+      .product-price {
+        font-size: 1.1rem;
+      }
+      
+      .product-image {
+        height: 180px;
+      }
+      
+      .order-btn-new {
+        padding: 10px;
+        font-size: 0.85rem;
+      }
+      
+      .hero-stats {
+        gap: 20px;
+      }
+      
+      .stat-item h3 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ANIMATED BACKGROUND -->
+<div class="bg-shapes">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo" height="40px"> Garga Copy Udhyog</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="badge-nepal">
+          <span>🇳🇵</span>
+          <span>Proudly Made in Nepal</span>
+        </div>
+        <h1>
+          Quality Notebooks<br>
+          For <span class="gradient-text">Every Student</span>
+        </h1>
+        <p>
+          Empowering education with premium quality notebooks. 
+          Trusted by thousands of students and schools across Nepal for durability, 
+          clean prints, and affordable pricing.
+        </p>
+        <div class="hero-cta">
+          <a href="#products"><button class="btn-gradient">Explore Products</button></a>
+          <a href="https://wa.me/9861540908"><button class="btn-outline-gradient">Bulk Orders</button></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+            <h3>10K+</h3>
+            <p>Happy Students</p>
+          </div>
+          <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+            <h3>50+</h3>
+            <p>Schools Trust Us</p>
+          </div>
+          <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+            <h3>10+</h3>
+            <p>Product Varieties</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="hero-image">
+          <img src="images/long_note.jpeg" alt="Notebooks">
+          <div class="floating-card card-1">
+            <i class="fas fa-check-circle" style="color:#10b981; font-size:1.5rem;"></i>
+            <p style="margin:8px 0 0; font-weight:600; font-size:0.9rem;">Premium Quality</p>
+          </div>
+          <div class="floating-card card-2">
+            <i class="fas fa-star" style="color:#f59e0b; font-size:1.5rem;"></i>
+            <p style="margin:8px 0 0; font-weight:600; font-size:0.9rem;">5★ Rated</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Why Choose Us?</h2>
+      <p>What makes our notebooks the preferred choice for students</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h5>Premium Quality</h5>
+          <p>High-grade paper (58-64 GSM) ensuring smooth writing and durability</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tag"></i>
+          </div>
+          <h5>Affordable Pricing</h5>
+          <p>Best prices in the market without compromising on quality</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-truck-fast"></i>
+          </div>
+          <h5>Fast Delivery</h5>
+          <p>Quick order processing and delivery across Nepal</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <h5>Trusted Brand</h5>
+          <p>Serving students and schools with dedication since years</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS WITH SLIDING ANIMATIONS -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our Product Range</h2>
+      <p>Explore our complete collection of notebooks designed for every need</p>
+    </div>
+    
+    <div class="row g-4">
+      
+      <!-- CATALOG 1: Note Copy (A2 – 64 GSM) -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-1" data-aos="zoom-in" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/two-line.jpeg" alt="Note Copy" class="main-img">
+            <img src="images/test1.jpg" alt="Note Copy Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Note Copy Alt 2" class="slide-img2">
+            <div class="product-badge">Popular</div>
+          </div>
+          <div class="product-content">
+            <h6>Note Copy (A2 – 64 GSM)</h6>
+            <p class="product-specs">Premium quality • Multiple sizes</p>
+            <div class="product-price">Rs. 50-120</div>
+            <a href="https://wa.me/9861540908?text=I want Note Copy (A2-64GSM)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 2: Two Line Copy (A2 – 58 GSM) -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-2" data-aos="zoom-in" data-aos-delay="150">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/Two-line58.jpg" alt="Two Line Copy" class="main-img">
+            <img src="images/test1.jpg" alt="Two Line Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Two Line Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Two Line Copy (A2 – 58 GSM)</h6>
+            <p class="product-specs">Smooth finish • Standard ruling</p>
+            <div class="product-price">Rs. 50-120</div>
+            <a href="https://wa.me/9861540908?text=I want Two Line Copy (A2-58GSM)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 3: Rough Copy -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/rough.jpeg" alt="Rough Copy" class="main-img">
+            <img src="images/test1.jpg" alt="Rough Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Rough Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Rough Copy (A5)</h6>
+            <p class="product-specs">Perfect for practice • Compact size</p>
+            <div class="product-price">Rs. 50-100</div>
+            <a href="https://wa.me/9861540908?text=I want Rough Copy (A5)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 4: Long Note -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-4" data-aos="zoom-in" data-aos-delay="250">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/long_note.jpeg" alt="Long Note" class="main-img">
+            <img src="images/test1.jpg" alt="Long Note Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Long Note Alt 2" class="slide-img2">
+            <div class="product-badge">Best Seller</div>
+          </div>
+          <div class="product-content">
+            <h6>Long Note Copy (A4)</h6>
+            <p class="product-specs">Large format • Extra pages</p>
+            <div class="product-price">Rs. 80-150</div>
+            <a href="https://wa.me/9861540908?text=I want Long Note Copy (A4)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 5: Graph Copy -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-5" data-aos="zoom-in" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/graph.jpeg" alt="Graph Copy" class="main-img">
+            <img src="images/test1.jpg" alt="Graph Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Graph Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Graph Copy</h6>
+            <p class="product-specs">For math & science • Grid lines</p>
+            <div class="product-price">Rs. 30-50</div>
+            <a href="https://wa.me/9861540908?text=I want Graph Copy" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 6: Square Box -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-6" data-aos="zoom-in" data-aos-delay="150">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/squarbox.jpeg" alt="Square Box" class="main-img">
+            <img src="images/test1.jpg" alt="Square Box Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Square Box Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Square Box Copy (Kothe)</h6>
+            <p class="product-specs">Square grid • Math friendly</p>
+            <div class="product-price">Rs. 50</div>
+            <a href="https://wa.me/9861540908?text=I want Square Box Copy" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 7: Practical Copy -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-7" data-aos="zoom-in" data-aos-delay="200">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/practical.jpeg" alt="Practical Copy" class="main-img">
+            <img src="images/test1.jpg" alt="Practical Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Practical Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Science Practical Copy</h6>
+            <p class="product-specs">Lab work • Special format</p>
+            <div class="product-price">Rs. 50</div>
+            <a href="https://wa.me/9861540908?text=I want Science Practical Copy" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 8: Nepali Copy A2 -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-8" data-aos="zoom-in" data-aos-delay="250">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/nepalia2.jpeg" alt="Nepali Copy A2" class="main-img">
+            <img src="images/test1.jpg" alt="Nepali A2 Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Nepali A2 Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Nepali Copy (A2)</h6>
+            <p class="product-specs">Devanagari script • Perfect lines</p>
+            <div class="product-price">Rs. 30</div>
+            <a href="https://wa.me/9861540908?text=I want Nepali Copy (A2)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 9: Long Plain Copy -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-9" data-aos="zoom-in" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/long_note.jpeg" alt="Long Plain" class="main-img">
+            <img src="images/test1.jpg" alt="Long Plain Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Long Plain Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Long Plain Copy (A4)</h6>
+            <p class="product-specs">For Higher Level Students • Premium</p>
+            <div class="product-price">Rs. 100-200</div>
+            <a href="https://wa.me/9861540908?text=I want Four Line Copy (A2)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 10: Nepali Copy A5 -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-10" data-aos="zoom-in" data-aos-delay="150">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/nepali.jpeg" alt="Nepali Copy A5" class="main-img">
+            <img src="images/test1.jpg" alt="Nepali A5 Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Nepali A5 Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Nepali Copy (A5)</h6>
+            <p class="product-specs">Compact • Devanagari lines</p>
+            <div class="product-price">Rs. 50-100</div>
+            <a href="https://wa.me/9861540908?text=I want Nepali Copy (A5)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG 11: Four Line Copy -->
+      <div class="col-lg-3 col-md-4 col-6 catalog-11" data-aos="zoom-in" data-aos-delay="200">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/4line.jpeg" alt="Four Line" class="main-img">
+            <img src="images/test1.jpg" alt="Four Line Alt 1" class="slide-img1">
+            <img src="images/test2.jpg" alt="Four Line Alt 2" class="slide-img2">
+          </div>
+          <div class="product-content">
+            <h6>Four Line Copy (A2)</h6>
+            <p class="product-specs">For beginners • Wide ruling</p>
+            <div class="product-price">Rs. 30-100</div>
+            <a href="https://wa.me/9861540908?text=I want Four Line Copy (A2)" target="_blank" style="text-decoration:none;">
+              <button class="order-btn-new">
+                <i class="fab fa-whatsapp"></i> Order Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2 style="color:white;">What Students Say</h2>
+      <p style="color:rgba(255,255,255,0.9);">Real feedback from our satisfied customers</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Best quality notebooks at the most affordable price. I've been using Garga copies for 2 years now and never disappointed!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨‍🎓</div>
+            <div class="author-info">
+              <h6>Rajesh Sharma</h6>
+              <p>11th Grade Student</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The paper quality is excellent. No ink bleeding and the binding lasts the entire academic year. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩‍🎓</div>
+            <div class="author-info">
+              <h6>Priya Thapa</h6>
+              <p>Bachelor Student</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"We order in bulk for our school. Garga Copy Udhyog always delivers on time with consistent quality. Very professional!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨‍🏫</div>
+            <div class="author-info">
+              <h6>Ramesh Paudel</h6>
+              <p>School Administrator</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-box" data-aos="zoom-in">
+      <h2>Ready to Order?</h2>
+      <p>Get in touch with us on WhatsApp for quick orders, bulk inquiries, or custom requirements. We're here to help!</p>
+      <a href="https://wa.me/9861540908" target="_blank" style="text-decoration:none;">
+        <button class="whatsapp-btn">
+          <i class="fab fa-whatsapp"></i>
+          Chat on WhatsApp
+        </button>
+      </a>
+      <p style="margin-top:20px; font-size:0.9rem; color:#64748b;">
+        📞 Call us: +977 986-1540908 | 📍 Made with pride in Nepal 🇳🇵
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h4 class="footer-brand" style="display: flex; justify-content: center; align-items: center; text-align: center;"><div class="logo-bg"><img src="images/logo.png" alt="logo" height="40px"></div> &nbsp; Garga Copy Udhyog</h4>
+        <p class="footer-desc">
+          Manufacturing premium quality notebooks for students across Nepal. 
+          Committed to excellence, affordability, and supporting education.
+        </p>
+        <div class="social-icons">
+          <a href="https://wa.me/9861540908" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4">
+        <div class="footer-links">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <div class="footer-links">
+          <h6>Popular Products</h6>
+          <ul>
+            <li><a href="#">Note Copy (A2)</a></li>
+            <li><a href="#">Long Note (A4)</a></li>
+            <li><a href="#">Graph Copy</a></li>
+            <li><a href="#">Science Practical</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <div class="footer-links">
+          <h6>Contact Us</h6>
+          <ul>
+            <li><a href="tel:+9779861540908">📞 +977 986-1540908</a></li>
+            <li><a href="https://wa.me/9861540908">💬 WhatsApp Us</a></li>
+            <li><a href="#">📍 Kankai Municipality 04, Treveni Tole, Jhapa Nepal</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Garga Copy Udhyog. All rights reserved. Made with ❤️ in Nepal 🇳🇵</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/9861540908" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 100 });
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
